@@ -1,0 +1,609 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">HeatGuard Pro</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Status -->
+    <string name="overheat_warning">Your phone is hot: stop gaming or charging</string>
+    <string name="level_normal">Normal</string>
+    <string name="level_elevated">Warming up</string>
+    <string name="level_critical">Overheating</string>
+    <string name="level_unknown">Unavailable</string>
+    <string name="level_normal_detail">%1$s below your %2$s threshold</string>
+    <string name="level_elevated_detail">Within %1$s of your %2$s threshold</string>
+    <string name="level_critical_detail">%1$s above your %2$s threshold</string>
+    <string name="level_critical_at_detail">At your %1$s threshold</string>
+    <string name="level_unknown_detail">This device is not reporting a valid battery temperature</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_subtitle">Battery thermal monitor</string>
+    <string name="live_waiting">Waiting for sensor</string>
+    <string name="live_updated">Live · %1$s</string>
+    <string name="battery_temperature">Battery temperature</string>
+    <string name="metric_threshold">Threshold</string>
+    <string name="metric_threshold_caption">Tap to adjust</string>
+    <string name="metric_battery">Battery</string>
+    <string name="metric_power">Power</string>
+    <string name="metric_voltage">Voltage</string>
+    <string name="health_caption">Health: %1$s</string>
+    <string name="session_title">This session</string>
+    <string name="session_since">Since %1$s</string>
+    <string name="session_min">Lowest</string>
+    <string name="session_max">Highest</string>
+    <string name="session_samples">Samples</string>
+    <string name="session_empty">No valid readings yet</string>
+    <string name="source_footnote">Source: battery temperature sensor via Android BatteryManager. Updates on every system battery broadcast and at least every 5 seconds while the app is open.</string>
+    <string name="not_reported">Not reported</string>
+
+    <!-- Power -->
+    <string name="status_charging">Charging</string>
+    <string name="status_discharging">On battery</string>
+    <string name="status_full">Fully charged</string>
+    <string name="status_not_charging">Plugged in, not charging</string>
+    <string name="status_unknown">Unknown</string>
+    <string name="source_ac">AC charger</string>
+    <string name="source_usb">USB</string>
+    <string name="source_wireless">Wireless charger</string>
+    <string name="source_dock">Dock</string>
+    <string name="source_none">Not plugged in</string>
+    <string name="source_unknown">Power source unknown</string>
+
+    <!-- Health -->
+    <string name="health_good">Good</string>
+    <string name="health_overheat">Overheat</string>
+    <string name="health_dead">Dead</string>
+    <string name="health_over_voltage">Over-voltage</string>
+    <string name="health_failure">Failure</string>
+    <string name="health_cold">Cold</string>
+    <string name="health_unknown">Unknown</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Stored on this device only</string>
+    <string name="settings_threshold_title">Overheating threshold</string>
+    <string name="settings_threshold_body">The indicator turns red at or above this battery temperature. Default is 40 °C.</string>
+    <string name="settings_margin_title">Early-warning band</string>
+    <string name="settings_margin_body">The indicator turns orange when the temperature is within this many degrees of the threshold.</string>
+    <string name="settings_unit_title">Display unit</string>
+    <string name="settings_unit_body">Choose the primary unit. The other unit is still shown as a secondary value.</string>
+    <string name="settings_preview_title">Resulting indicator bands</string>
+    <string name="settings_band_normal">Below %1$s</string>
+    <string name="settings_band_elevated">%1$s to %2$s</string>
+    <string name="settings_band_critical">%1$s and above</string>
+    <string name="settings_reset">Reset to defaults</string>
+    <string name="decrease">Decrease</string>
+    <string name="increase">Increase</string>
+    <!-- Notifications -->
+    <string name="channel_monitor_name">Monitoring status</string>
+    <string name="channel_monitor_desc">Persistent notification shown while HeatGuard monitors battery temperature</string>
+    <string name="channel_alert_name">Overheating alerts</string>
+    <string name="channel_alert_desc">Alerts when the battery temperature reaches your threshold</string>
+    <string name="notif_monitor_title">Battery %1$s · Monitoring</string>
+    <string name="notif_monitor_title_hot">Battery %1$s · Overheating</string>
+    <string name="notif_monitor_title_waiting">Monitoring · waiting for sensor</string>
+    <string name="notif_monitor_text_generic">Monitoring battery temperature. Tap to open HeatGuard.</string>
+    <string name="notif_monitor_text">Alerts at %1$s. Tap to open HeatGuard.</string>
+    <string name="notif_monitor_text_hot">At or above your %1$s threshold</string>
+    <string name="notif_alert_title">Battery at %1$s</string>
+    <string name="notif_action_stop">Stop monitoring</string>
+
+    <!-- Monitoring card -->
+    <string name="monitoring_title">Background monitoring</string>
+    <string name="monitoring_on">Active. Alerts and incident recording continue when the app is closed.</string>
+    <string name="monitoring_off">Off. Incidents are recorded and alerts sent only while monitoring is on.</string>
+    <string name="monitoring_start">Start monitoring</string>
+    <string name="monitoring_stop">Stop monitoring</string>
+    <string name="monitoring_starting">Starting…</string>
+    <string name="monitoring_failed">Android did not allow monitoring to start. Open the app and try again.</string>
+    <string name="monitoring_notifications_blocked">Notifications are blocked, so overheating alerts will not appear. Monitoring and incident recording still work.</string>
+    <string name="monitoring_open_notification_settings">Notification settings</string>
+
+    <!-- History -->
+    <string name="nav_history">History</string>
+    <string name="history_title">Incident history</string>
+    <string name="history_subtitle">Overheating events recorded on this device</string>
+    <string name="history_empty_title">No incidents recorded</string>
+    <string name="history_empty_body">An incident is recorded when monitoring is on and the battery reaches your threshold. Start monitoring from the dashboard.</string>
+    <string name="history_clear">Clear history</string>
+    <string name="history_clear_title">Clear incident history?</string>
+    <string name="history_clear_body">This permanently deletes all recorded incidents and their timelines from this device. It cannot be undone.</string>
+    <string name="history_clear_confirm">Delete all</string>
+    <string name="cancel">Cancel</string>
+    <string name="incident_ongoing">Ongoing</string>
+    <string name="incident_resolved">Resolved</string>
+    <string name="incident_peak">Peak %1$s</string>
+    <string name="incident_duration">%1$s</string>
+    <string name="incident_summary_line">Started at %1$s · battery %2$s · %3$s</string>
+    <string name="incident_not_found">This incident no longer exists.</string>
+    <string name="back">Back</string>
+
+    <!-- Incident detail -->
+    <string name="detail_title">Incident details</string>
+    <string name="detail_started">Started</string>
+    <string name="detail_resolved_at">Resolved</string>
+    <string name="detail_last_seen">Last reading</string>
+    <string name="detail_duration">Duration</string>
+    <string name="detail_initial">Initial temperature</string>
+    <string name="detail_peak_time">Peak reached</string>
+    <string name="detail_end_temp">Temperature at resolution</string>
+    <string name="detail_threshold">Threshold at the time</string>
+    <string name="detail_battery">Battery</string>
+    <string name="detail_battery_range">%1$s → %2$s</string>
+    <string name="detail_power_at_start">Power at start</string>
+    <string name="detail_unavailable">Unavailable</string>
+    <string name="detail_gap_note">Closed after monitoring was interrupted; the end time is the last reading seen.</string>
+    <string name="detail_timeline">Timeline</string>
+    <string name="timeline_start">Start</string>
+    <string name="timeline_peak">Peak</string>
+    <string name="timeline_resolved">Resolved</string>
+
+    <!-- Settings additions -->
+    <string name="settings_hysteresis_title">Recovery margin</string>
+    <string name="settings_hysteresis_body">After an alert, the incident only ends once the battery is this far below the threshold. This stops repeated alerts when the temperature hovers around the limit.</string>
+    <string name="settings_alerts_title">Alerts</string>
+    <string name="settings_notifications_title">Overheating notifications</string>
+    <string name="settings_notifications_body">Show a notification when an incident starts.</string>
+    <string name="settings_vibration_title">Vibration</string>
+    <string name="settings_vibration_body">Vibrate when an incident starts.</string>
+    <!-- Prediction -->
+    <string name="prediction_title">Heating forecast</string>
+    <string name="prediction_unavailable">No valid temperature reading, so no forecast is possible.</string>
+    <string name="prediction_collecting">Collecting readings to estimate a trend (needs about a minute of data).</string>
+    <string name="prediction_over">Already %1$s over your threshold.</string>
+    <string name="prediction_stable_headline">Temperature steady</string>
+    <string name="prediction_stable">Changing by %1$s.</string>
+    <string name="prediction_cooling_headline">Cooling down</string>
+    <string name="prediction_cooling">Falling by %1$s.</string>
+    <string name="prediction_heating_headline">Reaches threshold in about %1$s</string>
+    <string name="prediction_heating_detail">Warming at %1$s. Confidence: %2$s.</string>
+    <string name="prediction_slow_headline">Warming slowly</string>
+    <string name="prediction_slow_detail">Rising %1$s, not projected to reach the threshold within an hour.</string>
+    <string name="prediction_less_than_minute">under 1 minute</string>
+    <string name="prediction_rate">%1$s per minute</string>
+    <string name="prediction_footnote">Straight-line estimate from the last 5 minutes of readings. Real heating depends on what the phone is doing, so treat it as a guide.</string>
+    <string name="confidence_low">low</string>
+    <string name="confidence_medium">medium</string>
+    <string name="confidence_high">high</string>
+
+    <!-- Risk index -->
+    <string name="risk_title">Thermal Risk Index</string>
+    <string name="risk_out_of">/ 100</string>
+    <string name="risk_unavailable">Needs a valid battery temperature reading.</string>
+    <string name="risk_level_low">Low</string>
+    <string name="risk_level_moderate">Moderate</string>
+    <string name="risk_level_high">High</string>
+    <string name="risk_level_critical">Critical</string>
+    <string name="risk_how">How this is calculated</string>
+    <string name="risk_hide">Hide details</string>
+    <string name="risk_explainer">A heuristic score computed on this device from the factors below. Factors this phone cannot report are left out and the rest are rescaled to 100.</string>
+    <string name="risk_points">%1$s / %2$s</string>
+    <string name="risk_not_available">Not available</string>
+    <string name="risk_floor_threshold">Safety floor: the index is never below 75 while the battery is at or above your threshold.</string>
+    <string name="risk_floor_system">Safety floor: the index is never below 75 while Android reports severe thermal status or worse.</string>
+    <string name="risk_weighted">Weighted score before floors: %1$s</string>
+    <string name="factor_temperature">Battery temperature</string>
+    <string name="factor_temperature_input">%1$s of a %2$s threshold</string>
+    <string name="factor_warming_rate">Warming rate</string>
+    <string name="factor_warming_rate_input">%1$s per minute</string>
+    <string name="factor_time">Time to threshold</string>
+    <string name="factor_time_input_over">Already at threshold</string>
+    <string name="factor_time_input_none">Not heading to threshold</string>
+    <string name="factor_time_input">About %1$s</string>
+    <string name="factor_status">Android thermal status</string>
+    <string name="factor_headroom">Thermal headroom</string>
+    <string name="factor_charging">Charging load</string>
+
+    <!-- System thermal -->
+    <string name="system_title">Android thermal state</string>
+    <string name="system_status_label">System thermal status</string>
+    <string name="system_headroom_label">Thermal headroom</string>
+    <string name="system_forecast_label">Forecast in 10 s</string>
+    <string name="system_requires_10">Requires Android 10 or newer</string>
+    <string name="system_requires_11">Requires Android 11 or newer</string>
+    <string name="system_not_reported">Not reported by this device</string>
+    <string name="system_headroom_value">%1$s%% of limit</string>
+    <string name="system_footnote">These values come from Android itself. Headroom of 100%% is the point where the system begins throttling. Many phones do not report it.</string>
+    <string name="thermal_status_none">None</string>
+    <string name="thermal_status_light">Light</string>
+    <string name="thermal_status_moderate">Moderate</string>
+    <string name="thermal_status_severe">Severe</string>
+    <string name="thermal_status_critical">Critical</string>
+    <string name="thermal_status_emergency">Emergency</string>
+    <string name="thermal_status_shutdown">Shutdown imminent</string>
+    <!-- Profiles -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_custom">Custom</string>
+    <string name="profile_work">Work</string>
+    <string name="profile_navigation">Navigation</string>
+    <string name="profile_gaming">Gaming</string>
+    <string name="profile_charging">Charging</string>
+    <string name="profile_hint_custom">Using your own settings. Pick a profile to apply its alert settings.</string>
+    <string name="profile_hint_active">%1$s profile: alerts at %2$s.</string>
+    <string name="settings_profile_title">Profile</string>
+    <string name="settings_profile_body_custom">Choose a usage profile to give each situation its own alert settings. In Custom mode the settings below apply on their own.</string>
+    <string name="settings_profile_body_active">You are editing the %1$s profile. The threshold, early-warning band, recovery margin and vibration below apply to this profile only.</string>
+
+    <!-- Cooling Coach -->
+    <string name="nav_coach">Coach</string>
+    <string name="coach_title">Cooling Coach</string>
+    <string name="coach_subtitle">Guidance based on your phone\'s current state</string>
+    <string name="coach_recommendations">Recommendations</string>
+    <string name="session_card_title">Cooling session</string>
+    <string name="session_idle_body">Track how long the battery takes to cool to %1$s. HeatGuard measures the recovery; the cooling itself is up to you.</string>
+    <string name="session_start">Start cooling session</string>
+    <string name="session_end">End session</string>
+    <string name="session_cannot_cool">The battery is already at or below your recovery target of %1$s, so there is nothing to recover from.</string>
+    <string name="session_waiting_reading">Waiting for a temperature reading.</string>
+    <string name="session_timer_label">Recovery timer</string>
+    <string name="session_start_label">Start</string>
+    <string name="session_now_label">Now</string>
+    <string name="session_target_label">Target</string>
+    <string name="session_progress">%1$s of the way to target</string>
+    <string name="session_chart_collecting">Collecting readings…</string>
+    <string name="session_keep_monitoring">Readings arrive while the app is running. Keep monitoring on to track recovery with the screen off.</string>
+    <string name="result_recovered">Recovered in %1$s</string>
+    <string name="result_recovered_detail">Temperature fell %1$s to %2$s.</string>
+    <string name="result_stopped">Session ended after %1$s</string>
+    <string name="result_stopped_detail">Stopped at %1$s; the target was %2$s.</string>
+    <string name="result_interrupted">Session interrupted</string>
+    <string name="result_interrupted_detail">Readings stopped arriving, so the outcome is unknown. Keep monitoring on to track recovery while the screen is off.</string>
+    <string name="result_dismiss">Dismiss</string>
+    <string name="stats_title">Recovery statistics</string>
+    <string name="stats_empty">Finish a cooling session to see recovery statistics here.</string>
+    <string name="stats_recovered">Sessions recovered</string>
+    <string name="stats_recovered_value">%1$d of %2$d</string>
+    <string name="stats_avg_time">Average recovery time</string>
+    <string name="stats_fastest">Fastest recovery</string>
+    <string name="stats_avg_drop">Average temperature drop</string>
+    <string name="stats_avg_rate">Average cooling rate</string>
+    <string name="stats_rate_value">%1$s per minute</string>
+    <string name="recent_title">Recent sessions</string>
+    <string name="recent_line">%1$s · fell %2$s</string>
+    <string name="outcome_recovered">Recovered</string>
+    <string name="outcome_stopped">Ended early</string>
+    <string name="outcome_interrupted">Interrupted</string>
+    <string name="outcome_running">Running</string>
+    <string name="priority_high">Do now</string>
+    <string name="priority_medium">Helpful</string>
+    <string name="priority_low">Tip</string>
+
+    <!-- Advice -->
+    <string name="advice_unplug_title">Unplug the charger for now</string>
+    <string name="advice_unplug_body">Charging adds heat. Disconnect it until the phone cools. HeatGuard cannot control charging, so this is up to you.</string>
+    <string name="advice_wired_title">Prefer a cable to wireless charging</string>
+    <string name="advice_wired_body">Wireless charging typically produces more heat than charging with a cable.</string>
+    <string name="advice_stop_title">Pause demanding tasks</string>
+    <string name="advice_stop_body">Games, video calls, navigation, recording and similar work keep the processor busy. Pausing them is usually the fastest way to cool down. HeatGuard cannot tell which app is responsible.</string>
+    <string name="advice_case_title">Take the case off</string>
+    <string name="advice_case_body">A case can trap heat. Removing it helps the phone shed heat.</string>
+    <string name="advice_shade_title">Get out of the heat</string>
+    <string name="advice_shade_body">Move the phone out of direct sunlight and away from a car dashboard or other warm surfaces.</string>
+    <string name="advice_brightness_title">Lower the screen brightness</string>
+    <string name="advice_brightness_body">A bright display is a significant source of heat. Reduce the brightness or turn the screen off.</string>
+    <string name="advice_freezer_title">Do not use a fridge or freezer</string>
+    <string name="advice_freezer_body">Cooling a phone quickly can cause condensation inside it and damage it. Let it cool gradually in a shaded, ventilated spot.</string>
+    <string name="advice_airplane_title">Weak signal? Try airplane mode briefly</string>
+    <string name="advice_airplane_body">Searching for a signal makes the radio work harder. If you can do without connectivity for a few minutes, airplane mode can help.</string>
+    <string name="advice_system_title">Android is limiting performance</string>
+    <string name="advice_system_body">The system reports thermal throttling. Reduce the load and let the phone cool.</string>
+    <string name="advice_prevent_title">Act now to avoid overheating</string>
+    <string name="advice_prevent_body">The temperature is climbing toward your threshold. Reducing load, or unplugging a charger, now can prevent an alert.</string>
+    <string name="advice_charging_warms_title">Charging is adding heat</string>
+    <string name="advice_charging_warms_body">The phone warms while it charges, especially during heavy use. Avoid demanding tasks while charging, or unplug if you can.</string>
+    <string name="advice_resting_title">Keep the phone idle</string>
+    <string name="advice_resting_body">Leave the screen off and avoid heavy use while the cooling session runs.</string>
+    <string name="advice_work_title">Work profile</string>
+    <string name="advice_work_body">Close video calls or screen sharing you do not need, and keep the phone out of direct sun while you work.</string>
+    <string name="advice_nav_title">Navigation profile</string>
+    <string name="advice_nav_body">Mount the phone out of direct sun and keep its vents clear. If it is warm, avoid fast charging while navigating.</string>
+    <string name="advice_gaming_title">Gaming profile</string>
+    <string name="advice_gaming_body">Take short breaks, lower the graphics settings, and avoid playing while the phone is charging.</string>
+    <string name="advice_charging_profile_title">Charging profile</string>
+    <string name="advice_charging_profile_body">Charge in a cool place without a case, and avoid demanding tasks while it charges.</string>
+    <string name="advice_good_title">Temperature is normal</string>
+    <string name="advice_good_body">No action needed. Keeping the phone out of direct sun and off soft surfaces helps it stay cool.</string>
+    <string name="advice_sensor_title">Temperature sensor unavailable</string>
+    <string name="advice_sensor_body">This device is not reporting a valid battery temperature, so advice cannot be tailored to it.</string>
+    <!-- Navigation -->
+    <string name="nav_live">Live</string>
+    <string name="nav_insights">Insights</string>
+
+    <!-- Live analytics -->
+    <string name="analytics_title">Live Analytics</string>
+    <string name="analytics_subtitle">Battery temperature over time</string>
+    <string name="analytics_window">%1$d min</string>
+    <string name="analytics_chart_title">Temperature</string>
+    <string name="analytics_legend_threshold">Threshold %1$s</string>
+    <string name="analytics_legend_warning">Warning from %1$s</string>
+    <string name="analytics_x_now">now</string>
+    <string name="analytics_x_ago">−%1$s ago</string>
+    <string name="analytics_empty">Waiting for readings. The graph fills in while the app or background monitoring is running.</string>
+    <string name="analytics_stat_now">Now</string>
+    <string name="analytics_stat_min">Lowest</string>
+    <string name="analytics_stat_max">Highest</string>
+    <string name="analytics_stat_avg">Average</string>
+    <string name="analytics_stat_above">Time above threshold</string>
+    <string name="analytics_stat_trend">Trend</string>
+    <string name="analytics_stat_readings">Readings</string>
+    <string name="analytics_trend_rising">Rising %1$s per minute</string>
+    <string name="analytics_trend_falling">Falling %1$s per minute</string>
+    <string name="analytics_trend_steady">Steady</string>
+    <string name="analytics_trend_none">Collecting data</string>
+    <string name="analytics_footnote">This graph covers readings since the app or monitoring service started and is not saved. Readings during an overheating incident are saved under History.</string>
+    <string name="incident_chart_title">Temperature during the incident</string>
+
+    <!-- Insights -->
+    <string name="insights_title">Insights</string>
+    <string name="insights_subtitle">Patterns from incidents stored on this device</string>
+    <string name="insights_empty_title">No incidents to analyse yet</string>
+    <string name="insights_empty_body">Insights are built from recorded overheating incidents and cooling sessions. Turn on monitoring and they will appear here.</string>
+    <string name="insights_week_title">Last 7 days</string>
+    <string name="insights_week_compare" tools:ignore="PluralsCandidate">%1$d this week · %2$d the week before</string>
+    <string name="insights_tod_title">When incidents start</string>
+    <string name="tod_night">Night</string>
+    <string name="tod_morning">Morning</string>
+    <string name="tod_afternoon">Afternoon</string>
+    <string name="tod_evening">Evening</string>
+    <string name="tod_night_name">night</string>
+    <string name="tod_morning_name">morning</string>
+    <string name="tod_afternoon_name">afternoon</string>
+    <string name="tod_evening_name">evening</string>
+    <string name="insights_tod_hint">Night 00–06 · Morning 06–12 · Afternoon 12–18 · Evening 18–24</string>
+    <string name="insights_charging_title">Charging and incidents</string>
+    <string name="insights_none_yet">No incidents recorded yet.</string>
+    <plurals name="insights_charging_line">
+        <item quantity="one">%1$d of %2$d incident began while charging (%3$d%%)</item>
+        <item quantity="other">%1$d of %2$d incidents began while charging (%3$d%%)</item>
+    </plurals>
+    <string name="insights_charging_sources">By charger: %1$s</string>
+    <string name="insights_charging_peaks">Average peak: %1$s while charging, %2$s on battery</string>
+    <string name="insights_charging_caveat">This shows when incidents begin, not what caused them. HeatGuard does not record how long the phone spends charging in total.</string>
+    <string name="insights_summary_title">Summary</string>
+    <string name="insights_total">Incidents recorded</string>
+    <string name="insights_avg_peak">Average peak</string>
+    <string name="insights_max_peak">Highest peak</string>
+    <string name="insights_avg_duration">Average duration</string>
+    <string name="insights_longest">Longest incident</string>
+    <string name="insights_recovery_title">Cooling recovery</string>
+    <string name="insights_recs_title">Recommendations from your data</string>
+    <string name="insights_footer">Calculated on this device from your recorded incidents and cooling sessions. Nothing leaves it unless you export or share.</string>
+    <string name="insight_none_title">No overheating recorded</string>
+    <string name="insight_none_body">No incident has been recorded yet. Keep monitoring on so incidents are captured when they happen.</string>
+    <string name="insight_few_title">Not enough data for patterns yet</string>
+    <string name="insight_few_body">Patterns need at least 3 recorded incidents; there are %1$d so far. Keep monitoring on and check back.</string>
+    <string name="insight_charging_title">Most incidents begin while charging</string>
+    <string name="insight_charging_body">%1$d%% of your incidents began while the phone was charging. Charging in a cooler place, without a case, and avoiding heavy use while charging may help. This shows when incidents happen, not that charging caused them.</string>
+    <string name="insight_wireless_title">Wireless charging shows up often</string>
+    <string name="insight_wireless_body">%1$d%% of your charging incidents were on a wireless charger, which typically runs warmer than a cable.</string>
+    <string name="insight_time_title">Incidents cluster in the %1$s</string>
+    <string name="insight_time_body">%2$d%% of your incidents began in the %1$s. Consider lighter use or cooler surroundings at that time of day.</string>
+    <string name="insight_long_title">Incidents take a while to clear</string>
+    <string name="insight_long_body">Resolved incidents lasted %1$s on average. Pausing demanding tasks as soon as an alert appears should shorten them.</string>
+    <string name="insight_worse_title">More incidents than last week</string>
+    <string name="insight_worse_body">%1$d in the last 7 days, compared with %2$d in the 7 days before.</string>
+    <string name="insight_better_title">Fewer incidents than last week</string>
+    <string name="insight_better_body">%1$d in the last 7 days, compared with %2$d in the 7 days before. Whatever you changed seems to be working.</string>
+    <string name="insight_peaks_title">Peaks run well past your threshold</string>
+    <string name="insight_peaks_body">On average, incident peaks were %1$s above the threshold. An earlier response to alerts, or a lower threshold, would catch heat sooner.</string>
+    <string name="insight_quiet_title">A quiet week</string>
+    <string name="insight_quiet_body">No overheating incidents in the last 7 days.</string>
+
+    <!-- Export and share -->
+    <string name="export_csv">Export CSV</string>
+    <string name="export_share_report">Share report</string>
+    <string name="export_working">Preparing…</string>
+    <string name="export_nothing">Nothing to export yet.</string>
+    <string name="export_failed">Export failed. Please try again.</string>
+    <string name="export_chooser">Share HeatGuard data</string>
+    <string name="export_report_chooser">Share HeatGuard report</string>
+    <string name="export_hint">Exports incidents, their readings and cooling sessions recorded on this device as CSV files (temperatures in °C, times in UTC).</string>
+    <string name="report_header">HeatGuard Pro report</string>
+    <string name="report_generated">Generated %1$s</string>
+    <string name="report_incidents">Incidents recorded: %1$d (last 7 days: %2$d, the 7 days before: %3$d)</string>
+    <string name="report_peak">Highest peak: %1$s (%2$s)</string>
+    <string name="report_avg_peak">Average peak: %1$s</string>
+    <string name="report_avg_duration">Average duration: %1$s</string>
+    <string name="report_charging">Began while charging: %1$d of %2$d (%3$d%%)</string>
+    <string name="report_recovery">Cooling sessions recovered: %1$d of %2$d; average recovery %3$s</string>
+    <string name="report_recs">Recommendations:</string>
+    <string name="report_footer">Computed on the device by HeatGuard Pro from locally stored readings.</string>
+    <!-- Widget and tile -->
+    <string name="widget_label">HeatGuard temperature</string>
+    <string name="widget_description">Live battery temperature with a green, orange or red indicator.</string>
+    <string name="widget_updated">Updated %1$s</string>
+    <string name="widget_demo_meta">Simulated data</string>
+    <string name="widget_content_description">Battery temperature %1$s, %2$s</string>
+    <string name="tile_label">Heat monitor</string>
+    <string name="tile_sub_on">%1$s · monitoring on</string>
+    <string name="tile_sub_off">%1$s · tap to monitor</string>
+    <string name="demo_prefix">Demo · %1$s</string>
+
+    <!-- Integrations (Settings) -->
+    <string name="integrations_title">Widget and Quick Settings</string>
+    <string name="integrations_body">Add the temperature widget to your home screen, or the monitoring tile to Quick Settings, for one-tap access.</string>
+    <string name="integrations_add_widget">Add widget</string>
+    <string name="integrations_add_tile">Add tile</string>
+    <string name="integrations_widget_requested">Choose where to place the widget.</string>
+    <string name="integrations_widget_manual">Your launcher does not support adding it from here. Long-press the home screen, choose Widgets and look for HeatGuard.</string>
+    <string name="integrations_tile_added">The tile was added to Quick Settings.</string>
+    <string name="integrations_tile_present">The tile is already in Quick Settings.</string>
+    <string name="integrations_tile_manual">Swipe down twice to open Quick Settings, tap the edit (pencil) button and drag the Heat monitor tile into your tiles.</string>
+    <string name="integrations_tile_declined">The tile was not added.</string>
+
+    <!-- Demo mode -->
+    <string name="demo_title">Demo Mode</string>
+    <string name="demo_subtitle">Simulated readings for presentations</string>
+    <string name="demo_banner">DEMO MODE · simulated data</string>
+    <string name="demo_banner_controls">Controls</string>
+    <string name="demo_banner_exit">Exit</string>
+    <string name="demo_simulated_chip">Simulated</string>
+    <string name="demo_toggle_title">Demo Mode</string>
+    <string name="demo_toggle_body">Simulated temperatures pass through the same alerts, forecast, risk index, incident recording and coaching as real readings. They are labelled as simulated and kept completely separate from your real device history.</string>
+    <string name="demo_open_controls">Open demo controls</string>
+    <string name="demo_settings_title">Demo Mode</string>
+    <string name="demo_settings_body">Present or test the app with simulated temperatures. Real data is never mixed in.</string>
+    <string name="demo_off_hint">Turn Demo Mode on to simulate heating and cooling.</string>
+    <string name="demo_readout_title">Simulated reading</string>
+    <string name="demo_scenario_title">Scenario</string>
+    <string name="demo_scenario_manual">Manual</string>
+    <string name="demo_scenario_heat_up">Heat up</string>
+    <string name="demo_scenario_cool_down">Cool down</string>
+    <string name="demo_scenario_full_cycle">Full cycle</string>
+    <string name="demo_scenario_charging_heat">Charging heat</string>
+    <string name="demo_scenario_manual_body">The temperature follows the slider below.</string>
+    <string name="demo_scenario_heat_up_body">Warms steadily past your threshold and stays hot. Shows the forecast, colour change and alert.</string>
+    <string name="demo_scenario_cool_down_body">Cools steadily. Good for starting a cooling session and showing recovery.</string>
+    <string name="demo_scenario_full_cycle_body">Warms past the threshold, holds, then cools: one complete incident from alert to resolution.</string>
+    <string name="demo_scenario_charging_heat_body">Charging while heating up, so charging-aware advice and the risk index respond.</string>
+    <string name="demo_phase_warming">Phase: warming</string>
+    <string name="demo_phase_holding" tools:ignore="PluralsCandidate">Phase: holding at peak (%1$d s)</string>
+    <string name="demo_phase_cooling">Phase: cooling</string>
+    <string name="demo_phase_done">Phase: finished</string>
+    <string name="demo_temp_title">Simulated temperature</string>
+    <string name="demo_temp_auto">Controlled by the scenario. Switch to Manual to set it yourself.</string>
+    <string name="demo_power_title">Power</string>
+    <string name="demo_charging">Charging</string>
+    <string name="demo_battery_level">Battery level %1$d%%</string>
+    <string name="demo_data_title">Demo data</string>
+    <string name="demo_data_body">Demo incidents and cooling sessions appear in History, Insights and Coach while Demo Mode is on, marked as simulated. They are deleted when you exit Demo Mode. CSV export includes real data only.</string>
+    <string name="demo_reset">Reset demo data</string>
+    <string name="demo_exit">Exit Demo Mode</string>
+    <string name="demo_history_note">Showing simulated demo data</string>
+    <!-- Accessibility -->
+    <plurals name="a11y_chart">
+        <item quantity="one">Temperature chart: %1$d reading, lowest %2$s, highest %3$s, latest %4$s</item>
+        <item quantity="other">Temperature chart: %1$d readings, lowest %2$s, highest %3$s, latest %4$s</item>
+    </plurals>
+    <string name="a11y_chart_empty">Temperature chart: no readings yet</string>
+    <!-- Pre-call readiness -->
+    <string name="readiness_title">Pre-call readiness</string>
+    <string name="readiness_ready">Ready</string>
+    <string name="readiness_caution">Caution</string>
+    <string name="readiness_cool_down">Cool down first</string>
+    <string name="readiness_unavailable">No reading</string>
+    <string name="readiness_headline_ready">Good to go</string>
+    <string name="readiness_headline_caution">Warm: expect it to heat up</string>
+    <string name="readiness_headline_cool">Let it cool before a call</string>
+    <string name="readiness_headline_unavailable">Cannot judge without a temperature reading</string>
+    <string name="readiness_tile_temperature">Temperature</string>
+    <string name="readiness_tile_trend">Trend</string>
+    <string name="readiness_tile_status">Android status</string>
+    <string name="readiness_tile_cooling">Est. cooling</string>
+    <string name="readiness_cooling_not_needed">Not needed</string>
+    <string name="readiness_cooling_insufficient">Insufficient data</string>
+    <string name="readiness_cooling_to">to %1$s</string>
+    <string name="readiness_basis_personal" tools:ignore="PluralsCandidate">From your %1$d past recoveries</string>
+    <string name="readiness_basis_trend">From the current cooling trend</string>
+    <string name="readiness_reason_over">%1$s above your threshold</string>
+    <string name="readiness_reason_warning">Within the early-warning band of your threshold</string>
+    <string name="readiness_reason_system">Android reports %1$s thermal status</string>
+    <string name="readiness_reason_heating">Warming: could reach your threshold in about %1$s</string>
+    <string name="readiness_reason_cooling">Already cooling down</string>
+    <string name="readiness_reason_clear">Temperature, trend and Android status all look fine</string>
+    <string name="readiness_disclaimer">An estimate from battery temperature and recent readings. It does not predict call quality or how long a call can last.</string>
+
+    <!-- Personal cooling profile -->
+    <string name="profile_card_title">Your cooling profile</string>
+    <string name="profile_card_insufficient">Insufficient data</string>
+    <string name="profile_card_insufficient_body" tools:ignore="PluralsCandidate">Needs at least %1$d recorded recoveries to calculate averages. You have %2$d so far. Cooling sessions and resolved incidents both count.</string>
+    <string name="profile_card_built_from" tools:ignore="PluralsCandidate">Built from %1$d recoveries stored on this device (%2$d cooling sessions, %3$d incidents).</string>
+    <string name="profile_stat_rate">Average cooling rate</string>
+    <string name="profile_stat_avg_time">Average recovery time</string>
+    <string name="profile_stat_fastest">Fastest recovery</string>
+    <string name="profile_stat_fastest_value">%1$s (fell %2$s)</string>
+    <string name="profile_stat_estimate">Estimated recovery from now</string>
+    <string name="profile_estimate_value">about %1$s to reach %2$s</string>
+    <string name="profile_estimate_at_target">Already at %1$s or below</string>
+    <string name="profile_estimate_unavailable">Waiting for a temperature reading</string>
+    <string name="profile_recent_title">Recent recoveries</string>
+    <string name="profile_recent_line">%1$s · fell %2$s · %3$s</string>
+    <string name="profile_source_session">Cooling session</string>
+    <string name="profile_source_incident">Incident</string>
+    <string name="profile_estimate_note">An estimate of typical behaviour, not a promise.</string>
+    <!-- AI assistant -->
+    <string name="ai_title">AI assistant</string>
+    <string name="ai_subtitle">Groq · gpt-oss-120b</string>
+    <string name="ai_fab">Ask AI</string>
+    <string name="ai_new_chat">New chat</string>
+    <string name="ai_what_it_sees">What the AI sees</string>
+    <string name="ai_sees_title">Shared with your next question</string>
+    <string name="ai_sees_note">This is exactly what is sent, refreshed every time you ask. Nothing about you personally, no app names and no location are included.</string>
+    <string name="ai_sees_loading">Reading your phone…</string>
+    <string name="ai_input_hint">Ask about your phone…</string>
+    <string name="ai_send">Send</string>
+    <string name="ai_stop">Stop</string>
+    <string name="ai_thinking">Thinking</string>
+    <string name="ai_retry">Try again</string>
+    <string name="ai_empty_title">Ask anything about your phone</string>
+    <string name="ai_empty_body">I can see your live battery temperature, thermal status, memory, storage and your history on this device, and I tell you how old each reading is.</string>
+    <string name="ai_from_screen">Suggested for %1$s</string>
+    <string name="ai_disclaimer">AI can make mistakes. Check important details and never rely on it for safety. If a phone swells, smokes or smells burnt, stop using it.</string>
+
+    <!-- Setup -->
+    <string name="ai_setup_title">Set up the assistant</string>
+    <string name="ai_setup_body">Chat about your phone\'s heat, battery and history. Answers come from the gpt-oss-120b model on Groq, so your question and a summary of your phone are sent over the internet when you ask.</string>
+    <string name="ai_setup_sent_title">What is sent</string>
+    <string name="ai_setup_sent_1">Your question and the recent chat</string>
+    <string name="ai_setup_sent_2">A summary of battery temperature, thermal status, memory, storage, power saver, brightness and your incident history</string>
+    <string name="ai_setup_sent_3">The screen you are on and the current time</string>
+    <string name="ai_setup_never">Never sent: your name, email, contacts, location, installed apps or files.</string>
+    <string name="ai_consent">I understand this information is sent to Groq to produce answers.</string>
+    <string name="ai_key_label">Groq API key</string>
+    <string name="ai_key_help">Create one at console.groq.com/keys. It is stored encrypted on this phone and never leaves it except to Groq with your questions.</string>
+    <string name="ai_key_invalid">That does not look like a Groq key. It starts with gsk_ and has no spaces.</string>
+    <string name="ai_key_show">Show</string>
+    <string name="ai_key_hide">Hide</string>
+    <string name="ai_include_data">Include live phone data</string>
+    <string name="ai_include_data_body">Lets the assistant answer about your actual phone. Turn off to ask general questions only.</string>
+    <string name="ai_setup_save">Save and start</string>
+    <string name="ai_setup_have_key">An API key is already saved.</string>
+
+    <!-- Settings card -->
+    <string name="ai_settings_title">AI assistant</string>
+    <string name="ai_settings_status_on">Ready. Key saved and consent given.</string>
+    <string name="ai_settings_status_off">Not set up. Open the assistant to finish setup.</string>
+    <string name="ai_settings_remove_key">Remove API key</string>
+    <string name="ai_settings_open">Open assistant</string>
+
+    <!-- Failures -->
+    <string name="ai_err_not_configured">Finish setup to use the assistant.</string>
+    <string name="ai_err_invalid_key">Groq rejected the API key. Check or replace it in Settings.</string>
+    <string name="ai_err_rate_limited">Groq is limiting requests right now. Try again in a moment.</string>
+    <string name="ai_err_rate_limited_secs">Groq is limiting requests right now. Try again in about %1$d seconds.</string>
+    <string name="ai_err_offline">Could not reach Groq. Check your internet connection.</string>
+    <string name="ai_err_timeout">The request took too long. Try again.</string>
+    <string name="ai_err_server">Groq had a problem (error %1$d). Try again shortly.</string>
+    <string name="ai_err_rejected">The request was rejected: %1$s</string>
+    <string name="ai_err_empty">The assistant returned an empty answer. Try again.</string>
+    <string name="ai_err_unknown">Something went wrong. Try again.</string>
+
+    <!-- Suggestions -->
+    <string name="ai_s_health_label">Phone health check</string>
+    <string name="ai_s_health_prompt">Give me a full health check of my phone right now: battery temperature, thermal status, memory, storage and anything that could be adding heat. Tell me what matters most.</string>
+    <string name="ai_s_why_warm_label">Why is it warm?</string>
+    <string name="ai_s_why_warm_prompt">Why is my phone\'s battery temperature where it is right now?</string>
+    <string name="ai_s_call_label">Safe for a call?</string>
+    <string name="ai_s_call_prompt">Is now a good time to start a long video call? Use my current readings, and do not promise how long it will last.</string>
+    <string name="ai_s_graph_label">Explain the graph</string>
+    <string name="ai_s_graph_prompt">Explain what my recent temperature trend means in plain language.</string>
+    <string name="ai_s_trend_label">Is this normal?</string>
+    <string name="ai_s_trend_prompt">Is my current temperature trend and forecast normal, or should I do something?</string>
+    <string name="ai_s_plan_label">Cooling plan</string>
+    <string name="ai_s_plan_prompt">Give me a short step by step plan to cool my phone down right now, based on its current state.</string>
+    <string name="ai_s_fastest_label">Fastest way to cool</string>
+    <string name="ai_s_fastest_prompt">What is the fastest safe way to cool my phone down, given whether it is charging and how hot it is?</string>
+    <string name="ai_s_last_incident_label">My last incident</string>
+    <string name="ai_s_last_incident_prompt">Explain my most recent overheating incident: what the numbers say and what probably helped or hurt.</string>
+    <string name="ai_s_patterns_label">Any patterns?</string>
+    <string name="ai_s_patterns_prompt">What patterns do you see in my overheating history, and how sure are you given how much data there is?</string>
+    <string name="ai_s_week_label">Summarize my week</string>
+    <string name="ai_s_week_prompt">Summarize my phone\'s heat over the last 7 days compared with the week before.</string>
+    <string name="ai_s_charging_label">Charging habits</string>
+    <string name="ai_s_charging_prompt">What do my incidents say about my charging habits, and what should I change?</string>
+    <string name="ai_s_threshold_label">Best threshold?</string>
+    <string name="ai_s_threshold_prompt">Is my overheating threshold set sensibly for how I use my phone? Suggest a change only if the data supports it.</string>
+    <string name="ai_s_profile_label">Which profile?</string>
+    <string name="ai_s_profile_prompt">Which usage profile should I use for my situation, and why?</string>
+</resources>

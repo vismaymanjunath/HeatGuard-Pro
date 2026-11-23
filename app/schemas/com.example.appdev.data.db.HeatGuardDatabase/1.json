@@ -1,0 +1,195 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5c2ef4771944519812dea93490d4b34f",
+    "entities": [
+      {
+        "tableName": "incidents",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `source` TEXT NOT NULL, `startMillis` INTEGER NOT NULL, `endMillis` INTEGER, `lastSeenMillis` INTEGER NOT NULL, `initialTempC` REAL NOT NULL, `peakTempC` REAL NOT NULL, `peakMillis` INTEGER NOT NULL, `endTempC` REAL, `thresholdC` REAL NOT NULL, `startBatteryPercent` INTEGER, `endBatteryPercent` INTEGER, `startChargeStatus` TEXT NOT NULL, `startPowerSource` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startMillis",
+            "columnName": "startMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endMillis",
+            "columnName": "endMillis",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastSeenMillis",
+            "columnName": "lastSeenMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "initialTempC",
+            "columnName": "initialTempC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peakTempC",
+            "columnName": "peakTempC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peakMillis",
+            "columnName": "peakMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endTempC",
+            "columnName": "endTempC",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "thresholdC",
+            "columnName": "thresholdC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startBatteryPercent",
+            "columnName": "startBatteryPercent",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "endBatteryPercent",
+            "columnName": "endBatteryPercent",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "startChargeStatus",
+            "columnName": "startChargeStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startPowerSource",
+            "columnName": "startPowerSource",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_incidents_source_startMillis",
+            "unique": false,
+            "columnNames": [
+              "source",
+              "startMillis"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_incidents_source_startMillis` ON `${TABLE_NAME}` (`source`, `startMillis`)"
+          }
+        ]
+      },
+      {
+        "tableName": "incident_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `incidentId` INTEGER NOT NULL, `timestampMillis` INTEGER NOT NULL, `temperatureC` REAL NOT NULL, `batteryPercent` INTEGER, `chargeStatus` TEXT NOT NULL, `powerSource` TEXT NOT NULL, FOREIGN KEY(`incidentId`) REFERENCES `incidents`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "incidentId",
+            "columnName": "incidentId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampMillis",
+            "columnName": "timestampMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperatureC",
+            "columnName": "temperatureC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "batteryPercent",
+            "columnName": "batteryPercent",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "chargeStatus",
+            "columnName": "chargeStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "powerSource",
+            "columnName": "powerSource",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_incident_samples_incidentId_timestampMillis",
+            "unique": false,
+            "columnNames": [
+              "incidentId",
+              "timestampMillis"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_incident_samples_incidentId_timestampMillis` ON `${TABLE_NAME}` (`incidentId`, `timestampMillis`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "incidents",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "incidentId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5c2ef4771944519812dea93490d4b34f')"
+    ]
+  }
+}
